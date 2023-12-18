@@ -1,0 +1,58 @@
+body{
+    background-color:lightblue ;
+}
+body, div, img {
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 850px;
+    height: 640px;
+}
+
+#imgLeft{
+  float: left;
+  width: 40%; 
+  height: 80%;
+  vertical-align: top;
+  /* box-sizing: border-box;  */
+}
+
+#imgCenter{
+    vertical-align: top;
+    float: none;
+    width: 30%; 
+    height: 80%;
+  }
+  
+#textRight{
+    line-height: 500px;     
+    text-align: center;
+    font-size: 30px;
+    float: right;
+    width: 30%;
+    height: 80%;
+    background-color: pink ;
+}
+
+#textUp{
+    text-align: center;
+    line-height: 50px;     
+    font-size: 30px;
+    float:none;
+    height: 10%;
+    width: 100%;
+    background-color: rgb(15, 63, 164);
+
+}
+
+#textBottom{
+    text-align: center;
+    line-height: 50px;     
+    font-size: 30px;
+    float:none;
+    height: 10%;
+    width: 100%;
+    background-color: rgb(218, 197, 92);
+    margin:0;
+}
