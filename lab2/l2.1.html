@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма для заповнення</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Форма для заповнення</h1>
+    <form id="dataForm">
+        <label>
+            ПІБ
+            <input type="text" id="name" placeholder="ХХХХХХХ Х.Х.">
+        </label>
+        <label>
+            Телефон
+            <input type="text" id="tel" placeholder="(ЧЧЧ) - ЧЧЧ-ЧЧ-ЧЧ" maxlength="30">
+        </label>
+        <label>
+            ID
+            <input type="text" id="id" placeholder="ЧЧЧЧЧ" maxlength="5">
+        </label>
+        <label>
+            Факультет
+            <input type="text" id="faculty" placeholder="ХХХХ" maxlength="5">
+        </label>
+        <label>
+            Дата народження
+            <input type="text" id="birthdate" placeholder="ЧЧ.ММ.РРРР">
+        </label>
+        <button type="button" onclick="validateForm()">Підтвердження</button>
+    </form>
+    <div id="output"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

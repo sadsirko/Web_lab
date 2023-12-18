@@ -1,0 +1,33 @@
+/* .container {
+    max-width: 400px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+} */
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input.error {
+    border: 2px solid red;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
