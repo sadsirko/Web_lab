@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <title>Chat App</title>
+  <style>
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages li { padding: 5px 10px; border: 1px solid #ddd; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <div id="login">
+    <input id="name" type="text" placeholder="Enter your name">
+    <button onclick="joinChat()">Join Chat</button>
+  </div>
+  <ul id="messages"></ul>
+  <form id="messageForm" style="display:none;">
+    <input id="m" autocomplete="off" placeholder="Message">
+    <button>Send</button>
+  </form>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    var socket = io();
+    var userName;
+    var userColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+    function joinChat() {
+      userName = $('#name').val();
+      if (userName) {
+        $('#login').hide();
+        $('#messageForm').show();
+        socket.emit('join chat', userName);
+      }
+    }
+
+    $(function () {
+      $('#messageForm').submit(function(e){
+        e.preventDefault();
+        socket.emit('chat message', { name: userName, message: $('#m').val(), color: userColor });
+        $('#m').val('');
+        return false;
+      });
+
+      socket.on('chat message', function(data){
+        $('#messages').append($('<li>').html('<strong style="color: ' + data.color + '">' + data.name + ':</strong> ' + data.message).css('border-color', data.color));
+      });
+    });
+  </script>
+</body>
+</html>
